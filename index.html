@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,28 +10,26 @@
 </head>
 <body>
     <header class="header">
-    <div class="container nav">
-        
-        <a class="brand" href="#inicio" aria-label="Cuidar+ início">
-           <img src="imagens/Logo cuidar +.jpeg" alt="Logo Cuidar+">
-       </a>
+        <div class="container nav">
+            <a class="brand" href="#inicio" aria-label="Cuidar+ início">
+                <img src="imagens/Logo cuidar +.jpeg" alt="Logo Cuidar+">
+            </a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-        </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"></button>
 
-        <nav id="mainNav">
-            <a href="#problema">Problema</a>
-            <a href="#solucao">Solução</a>
-            <a href="#mvp">MVP</a>
-            <a href="#planos">Planos</a>
-        </nav>
+            <nav id="mainNav">
+                <a href="#problema">Problema</a>
+                <a href="#solucao">Solução</a>
+                <a href="#mvp">MVP</a>
+                <a href="#planos">Planos</a>
+                <a href="#contato">Contato</a>
+            </nav>
 
-        <a class="btn btn-primary nav-cta" href="#planos">
-            Quero conhecer
-        </a>
-
-    </div>
-</header>
+            <a class="btn btn-primary nav-cta" href="#planos">
+                Quero conhecer
+            </a>
+        </div>
+    </header>
 
     <main>
         <section class="hero" id="inicio">
@@ -38,6 +37,7 @@
                 <div class="hero-copy">
                     <span class="eyebrow">MVP • Cuidar+ • Sempre com você</span>
                     <h1>Cuidar à distância também é <span>estar presente.</span></h1>
+
                     <p>
                         O Cuidar+ ajuda famílias e cuidadores a acompanhar a rotina do idoso,
                         organizar lembretes e encontrar oportunidades de convivência.
@@ -59,13 +59,21 @@
                     <div class="phone-shell">
                         <img src="imagens/pagina inicial.jpeg" alt="Tela inicial do aplicativo Cuidar+">
                     </div>
+
                     <div class="floating-card floating-card-top">
                         <span class="dot green"></span>
-                        <div><strong>Tudo bem por aqui</strong><small>Rotina acompanhada</small></div>
+                        <div>
+                            <strong>Tudo bem por aqui</strong>
+                            <small>Rotina acompanhada</small>
+                        </div>
                     </div>
+
                     <div class="floating-card floating-card-bottom">
                         <span class="dot purple"></span>
-                        <div><strong>Próximo aviso</strong><small>Tomar Dipirona • 22:30</small></div>
+                        <div>
+                            <strong>Próximo aviso</strong>
+                            <small>Tomar Dipirona • 22:30</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,7 +164,7 @@
 
                 <div class="showcase">
                     <div class="showcase-image">
-                        <img id="screenImage" src="imagens/pagina ini.jpeg" alt="Tela do MVP Cuidar+">
+                        <img id="screenImage" src="imagens/pagina inicial.jpeg" alt="Tela do MVP Cuidar+">
                     </div>
 
                     <div class="showcase-copy">
@@ -167,8 +175,8 @@
                         </p>
 
                         <div class="showcase-buttons">
-                            <button class="btn btn-outline" id="prevScreen">← Anterior</button>
-                            <button class="btn btn-primary" id="nextScreen">Próxima →</button>
+                            <button type="button" class="btn btn-outline" id="prevScreen">← Anterior</button>
+                            <button type="button" class="btn btn-primary" id="nextScreen">Próxima →</button>
                         </div>
 
                         <div class="dots" id="dots" aria-label="Selecionar tela"></div>
@@ -176,27 +184,32 @@
                 </div>
 
                 <div class="screen-grid">
-                    <button class="screen-thumb active" data-index="0">
+                    <button type="button" class="screen-thumb active" data-index="0">
                         <img src="imagens/pagina inicial.jpeg" alt="Miniatura da tela inicial">
                         <span>Início</span>
                     </button>
-                    <button class="screen-thumb" data-index="1">
+
+                    <button type="button" class="screen-thumb" data-index="1">
                         <img src="imagens/login.jpeg" alt="Miniatura da tela de login">
                         <span>Login</span>
                     </button>
-                    <button class="screen-thumb" data-index="2">
+
+                    <button type="button" class="screen-thumb" data-index="2">
                         <img src="imagens/compromossos.jpeg" alt="Miniatura de compromissos">
                         <span>Compromissos</span>
                     </button>
-                    <button class="screen-thumb" data-index="3">
+
+                    <button type="button" class="screen-thumb" data-index="3">
                         <img src="imagens/lembrete.jpeg" alt="Miniatura de novo lembrete">
                         <span>Novo lembrete</span>
                     </button>
-                    <button class="screen-thumb" data-index="4">
+
+                    <button type="button" class="screen-thumb" data-index="4">
                         <img src="imagens/atividades.jpeg" alt="Miniatura de atividades">
                         <span>Atividades</span>
                     </button>
-                    <button class="screen-thumb" data-index="5">
+
+                    <button type="button" class="screen-thumb" data-index="5">
                         <img src="imagens/acessibilidade.jpeg" alt="Miniatura de configurações e acessibilidade">
                         <span>Acessibilidade</span>
                     </button>
@@ -212,10 +225,37 @@
                 </div>
 
                 <div class="steps-grid">
-                    <div class="step"><span>1</span><div><h3>Cadastre</h3><p>Crie a conta e conecte o familiar ou cuidador.</p></div></div>
-                    <div class="step"><span>2</span><div><h3>Organize</h3><p>Adicione lembretes e compromissos da rotina.</p></div></div>
-                    <div class="step"><span>3</span><div><h3>Acompanhe</h3><p>Veja o status dos compromissos e receba avisos.</p></div></div>
-                    <div class="step"><span>4</span><div><h3>Conecte</h3><p>Encontre atividades e fortaleça a convivência.</p></div></div>
+                    <div class="step">
+                        <span>1</span>
+                        <div>
+                            <h3>Cadastre</h3>
+                            <p>Crie a conta e conecte o familiar ou cuidador.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span>2</span>
+                        <div>
+                            <h3>Organize</h3>
+                            <p>Adicione lembretes e compromissos da rotina.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span>3</span>
+                        <div>
+                            <h3>Acompanhe</h3>
+                            <p>Veja o status dos compromissos e receba avisos.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span>4</span>
+                        <div>
+                            <h3>Conecte</h3>
+                            <p>Encontre atividades e fortaleça a convivência.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -233,7 +273,7 @@
                         <span class="plan-name">Padrão</span>
                         <div class="price">R$ 24,90 <small>/mês</small></div>
                         <p>Para quem quer começar a organizar a rotina com mais praticidade.</p>
-                        <button class="btn btn-outline select-plan" data-plan="Padrão">Escolher Padrão</button>
+                        <button type="button" class="btn btn-outline select-plan" data-plan="Padrão">Escolher Padrão</button>
                     </article>
 
                     <article class="price-card featured">
@@ -241,14 +281,14 @@
                         <span class="plan-name">Família</span>
                         <div class="price">R$ 39,90 <small>/mês</small></div>
                         <p>Para famílias que querem acompanhar a rotina e manter mais proximidade.</p>
-                        <button class="btn btn-primary select-plan" data-plan="Família">Quero o Família</button>
+                        <button type="button" class="btn btn-primary select-plan" data-plan="Família">Quero o Família</button>
                     </article>
 
                     <article class="price-card">
                         <span class="plan-name">Premium</span>
                         <div class="price">R$ 59,90 <small>/mês</small></div>
                         <p>Para uma experiência mais completa de acompanhamento e cuidado.</p>
-                        <button class="btn btn-outline select-plan" data-plan="Premium">Escolher Premium</button>
+                        <button type="button" class="btn btn-outline select-plan" data-plan="Premium">Escolher Premium</button>
                     </article>
                 </div>
 
@@ -258,7 +298,6 @@
                         <h3>Investimento inicial estimado: R$ 80.000,00</h3>
                         <p>Custo mensal estimado: R$ 600,00 • Manutenção: R$ 3.000,00.</p>
                     </div>
-                
                 </div>
             </div>
         </section>
@@ -269,54 +308,109 @@
                     <span class="eyebrow">Pronto para cuidar melhor?</span>
                     <h2>Transforme cuidado em presença.</h2>
                     <p>Conheça o Cuidar+ e veja como o aplicativo pode aproximar famílias e organizar a rotina.</p>
+                    <button type="button" class="btn btn-primary" id="demoButton">
+                        Entre em contato
+                    </button>
                 </div>
-              
             </div>
         </section>
     </main>
 
-        
-<footer class="footer">
-    <div class="container footer-content">
-        <div>
-            <div class="brand footer-brand">
-                <img src="imagens/Logo cuidar +.jpeg" alt="Logo Cuidar+">
-                <span>Cuidar<span>+</span></span>
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <div class="brand footer-brand">
+                    <img src="imagens/Logo cuidar +.jpeg" alt="Logo Cuidar+">
+                    <span>Cuidar<span>+</span></span>
+                </div>
+
+                <p>Mais cuidado, sempre.</p>
+
+                <p>
+                    Interessado no aplicativo? Entre em contato:
+                    <a href="mailto:projeto2integrador2grupo2@gmail.com">
+                        projeto2integrador2grupo2@gmail.com
+                    </a>
+                </p>
             </div>
 
-            <p>Mais cuidado, sempre.</p>
+            <p>© 2026 Cuidar+ • Teccare</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="demoModal" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="modal-close" id="closeModal" aria-label="Fechar">×</button>
+
+            <span class="eyebrow">Entre em contato</span>
+            <h2>Vamos conversar sobre o Cuidar+?</h2>
 
             <p>
-                Interessado no aplicativo? Entre em contato:
+                Preencha o formulário para tirar dúvidas,
+                conhecer o aplicativo ou conversar sobre parcerias.
+            </p>
+
+            <form
+                id="demoForm"
+                action="https://formsubmit.co/projeto2integrador2grupo2@gmail.com"
+                method="POST"
+            >
+                <input type="hidden" name="_subject" value="Novo contato pelo site Cuidar+">
+                <input type="hidden" name="_template" value="table">
+
+                <label for="name">Nome completo</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+                <label for="email">E-mail para resposta</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+                <label for="assunto">Assunto</label>
+                <select id="assunto" name="assunto" required>
+                    <option value="">Selecione um assunto</option>
+                    <option value="Conhecer o aplicativo">Conhecer o aplicativo</option>
+                    <option value="Duvidas">Dúvidas</option>
+                    <option value="Parceria">Parceria</option>
+                    <option value="Outro">Outro</option>
+                </select>
+
+                <label for="mensagem">Sua mensagem</label>
+                <textarea
+                    id="mensagem"
+                    name="message"
+                    placeholder="Escreva sua mensagem..."
+                    rows="5"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn btn-primary">
+                    Enviar mensagem
+                </button>
+            </form>
+
+            <p class="form-message" id="formMessage"></p>
+
+            <p>
+                Ou envie um e-mail diretamente para:
                 <a href="mailto:projeto2integrador2grupo2@gmail.com">
                     projeto2integrador2grupo2@gmail.com
                 </a>
             </p>
         </div>
-
-        <p>© 2026 Cuidar+ • Teccare</p>
     </div>
-</footer>
-
-<div class="modal" id="demoModal" aria-hidden="true">
-    <div class="modal-content">
-        <button class="modal-close" id="closeModal" aria-label="Fechar">×</button>
-
-        <span class="eyebrow">Demonstração</span>
-        <h2>Vamos apresentar o Cuidar+?</h2>
-
-        <p>Digite seu nome e e-mail para deixar um contato de demonstração.</p>
-
-        <form id="demoForm">
-            <input type="text" id="name" placeholder="Seu nome" required>
-            <input type="email" id="email" placeholder="Seu e-mail" required>
-        </form>
-
-        <p class="form-message" id="formMessage"></p>
-    </div>
-</div>
-```
 
     <script src="script.js"></script>
 </body>
 </html>
+```
