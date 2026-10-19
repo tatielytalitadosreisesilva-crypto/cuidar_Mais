@@ -1,25 +1,23 @@
-```javascript
-// Notificação ao escolher um plano
 document.querySelectorAll(".select-plan").forEach(botao => {
     botao.addEventListener("click", () => {
         alert("Plano " + botao.dataset.plan + " escolhido!");
     });
 });
 
-
-// Botões que levam até os planos
 document.querySelectorAll(".nav-cta, .hero-actions .btn-primary").forEach(botao => {
     botao.addEventListener("click", event => {
         event.preventDefault();
 
-        document.querySelector("#planos").scrollIntoView({
-            behavior: "smooth"
-        });
+        const planos = document.querySelector("#planos");
+
+        if (planos) {
+            planos.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
     });
 });
 
-
-// Telas do MVP
 const telas = [
     {
         titulo: "Tela inicial do idoso",
@@ -55,45 +53,58 @@ const telas = [
 
 let telaAtual = 0;
 
+const screenImage = document.querySelector("#screenImage");
+const screenTitle = document.querySelector("#screenTitle");
+const screenText = document.querySelector("#screenText");
+const slideCount = document.querySelector("#slideCount");
+const nextScreen = document.querySelector("#nextScreen");
+const prevScreen = document.querySelector("#prevScreen");
+
 function atualizarTela() {
-    document.querySelector("#screenImage").src = telas[telaAtual].imagem;
-    document.querySelector("#screenTitle").textContent = telas[telaAtual].titulo;
-    document.querySelector("#screenText").textContent = telas[telaAtual].descricao;
-    document.querySelector("#slideCount").textContent =
-        `${telaAtual + 1} / ${telas.length}`;
+    if (!screenImage || !screenTitle || !screenText || !slideCount) {
+        return;
+    }
+
+    const tela = telas[telaAtual];
+
+    screenImage.src = tela.imagem;
+    screenImage.alt = tela.titulo;
+    screenTitle.textContent = tela.titulo;
+    screenText.textContent = tela.descricao;
+    slideCount.textContent = `${telaAtual + 1} / ${telas.length}`;
 
     document.querySelectorAll(".screen-thumb").forEach((thumb, index) => {
         thumb.classList.toggle("active", index === telaAtual);
     });
 }
 
+if (nextScreen) {
+    nextScreen.addEventListener("click", () => {
+        telaAtual = (telaAtual + 1) % telas.length;
+        atualizarTela();
+    });
+}
 
-// Botão próxima tela
-document.querySelector("#nextScreen").addEventListener("click", () => {
-    telaAtual = (telaAtual + 1) % telas.length;
-    atualizarTela();
-});
+if (prevScreen) {
+    prevScreen.addEventListener("click", () => {
+        telaAtual = (telaAtual - 1 + telas.length) % telas.length;
+        atualizarTela();
+    });
+}
 
-
-// Botão tela anterior
-document.querySelector("#prevScreen").addEventListener("click", () => {
-    telaAtual = (telaAtual - 1 + telas.length) % telas.length;
-    atualizarTela();
-});
-
-
-// Selecionar uma tela pelas miniaturas
 document.querySelectorAll(".screen-thumb").forEach(thumb => {
     thumb.addEventListener("click", () => {
-        telaAtual = Number(thumb.dataset.index);
-        atualizarTela();
+        const indice = Number(thumb.dataset.index);
+
+        if (Number.isInteger(indice) && indice >= 0 && indice < telas.length) {
+            telaAtual = indice;
+            atualizarTela();
+        }
     });
 });
 
 atualizarTela();
 
-
-// Menu para celular
 const menuToggle = document.querySelector("#menuToggle");
 const mainNav = document.querySelector("#mainNav");
 
@@ -109,8 +120,6 @@ if (menuToggle && mainNav) {
     });
 }
 
-
-// Janela de demonstração, caso exista um botão para abri-la
 const demoButton = document.querySelector("#demoButton");
 const demoModal = document.querySelector("#demoModal");
 const closeModal = document.querySelector("#closeModal");
@@ -122,4 +131,21 @@ if (demoButton && demoModal && closeModal) {
     });
 
     closeModal.addEventListener("click", () => {
-        demo
+        demoModal.classList.remove("show");
+        demoModal.setAttribute("aria-hidden", "true");
+    });
+
+    demoModal.addEventListener("click", event => {
+        if (event.target === demoModal) {
+            demoModal.classList.remove("show");
+            demoModal.setAttribute("aria-hidden", "true");
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            demoModal.classList.remove("show");
+            demoModal.setAttribute("aria-hidden", "true");
+        }
+    });
+}
